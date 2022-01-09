@@ -7,7 +7,6 @@ class Solution:
             max_price=max(max_price, prices[i]-lowest)
             lowest=min(lowest, prices[i])
             
-        if max_price<0: 
-            return 0
+        
         return max_price
         
