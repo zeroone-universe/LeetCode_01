@@ -1,2 +1,3 @@
 # LeetCode_01
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
+LeetCode에서 연습한 코딩 테스트 문제들을 업로드하는 디렉토리입니다.  
+LeetHub](https://github.com/QasimWani/LeetHub)
