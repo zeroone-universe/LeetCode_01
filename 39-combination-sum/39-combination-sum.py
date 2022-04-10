@@ -1,19 +1,17 @@
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         result = []
-        candidates.sort()
+        sorted_cand = sorted(candidates)
         
-        def dfs(hap, discovered=[]):
-            if hap > target:
+        def dfs(nums, index):
+            if sum(nums) == target:
+                result.append(nums[:])
                 return
-            elif hap == target: 
-                result.append(discovered[:])
+            elif sum(nums) > target:
                 return
             
-            for idx in range(candidates.index(discovered[-1]), len(candidates)):
-                dfs(hap+candidates[idx], discovered + [candidates[idx]])
-        
-        for cand in candidates:
-            dfs(cand, [cand])
-        
+            for i in range(index, len(sorted_cand)):
+                dfs(nums+[sorted_cand[i]],i)
+                
+        dfs([], 0)
         return result
