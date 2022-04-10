@@ -6,7 +6,7 @@ class Solution:
         
         def dfs(comb, max_num):
             if len(comb) == k :
-                result.append(comb)
+                result.append(comb[:])
                 return
             
             for j in tot:
