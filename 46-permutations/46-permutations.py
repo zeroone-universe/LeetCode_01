@@ -12,8 +12,8 @@ class Solution:
                 if j not in perm: 
                     dfs(perm + [j])
         
-        for i in nums:
-            dfs([i])
+        
+        dfs([])
         
         return result
                     
