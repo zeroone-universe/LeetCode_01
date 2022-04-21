@@ -1,7 +1,7 @@
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
         Q=[(0,k)]
-        dist = collections.defaultdict(list)
+        dist = collections.defaultdict(int)
         graph = collections.defaultdict(list)
         
         for start,end,time in times:
