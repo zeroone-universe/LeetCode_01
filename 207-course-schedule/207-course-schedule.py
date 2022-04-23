@@ -10,10 +10,11 @@ class Solution:
         visited = set()
         
         def dfs(i):
-            if i in traced:
-                return False
             if i in visited:
                 return True
+            if i in traced:
+                return False
+            
             
             traced.add(i)
             for y in graph[i]:
