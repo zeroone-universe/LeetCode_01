@@ -6,11 +6,18 @@
 class Solution:
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
         
-        cur = head
-        while cur and cur.next:
-            cur.val ,cur.next.val = cur.next.val, cur.val
-            
-            cur = cur.next.next
-            
+        root = prev = ListNode(None)
         
-        return head
+        prev.next = head
+        
+        while head and head.next:
+            b = head.next
+            head.next = b.next
+            b.next = head
+            
+            prev.next = b
+            
+            head = head.next
+            prev = prev.next.next
+            
+        return root.next
