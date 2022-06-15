@@ -7,13 +7,13 @@
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         def swap(node):
-            if not node:
-                return 
-            left = node.left
-            right = node.right
-            swap(left)
-            swap(right)
-            node.left, node.right = node.right, node.left
+            if node:
+                
+                left = node.left
+                right = node.right
+                swap(left)
+                swap(right)
+                node.left, node.right = node.right, node.left
             
         swap(root)
         
