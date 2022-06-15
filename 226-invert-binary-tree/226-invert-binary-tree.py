@@ -6,9 +6,6 @@
 #         self.right = right
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        
-        orig = root
-        
         def swap(node):
             if not node:
                 return 
@@ -20,4 +17,4 @@ class Solution:
             
         swap(root)
         
-        return orig
+        return root
