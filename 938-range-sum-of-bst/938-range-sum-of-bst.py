@@ -12,8 +12,13 @@ class Solution:
                 if low<=node.val<=high:
                     self.value += node.val
                 
-                dfs(node.left)
-                dfs(node.right)
+                if node.val<low:
+                    dfs(node.right)
+                elif node.val>high:
+                    dfs(node.left)
+                else:
+                    dfs(node.left)
+                    dfs(node.right)
                 
         dfs(root)
         
