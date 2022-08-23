@@ -6,8 +6,8 @@ class Solution:
         left = start = end = 0
         
         for right, char in enumerate(s,1):
-     
-            missing -= need[char]  >0
+            if need[char] > 0:
+                missing -= 1
             need[char] -= 1
             
             if missing == 0:
