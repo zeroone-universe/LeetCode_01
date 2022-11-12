@@ -16,16 +16,16 @@ class Solution:
         
         output = []
         
-        def dfs(string, digits_dfs):
-            if len(digits_dfs) == 0:
+        def dfs(string, idx):
+            if idx == len(digits):
                 output.append(string)
                 return 0
             
-            for alpha in dic[digits_dfs[0]]:
-                dfs(string + alpha, digits_dfs[1:])
+            for alpha in dic[digits[idx]]:
+                dfs(string + alpha, idx+1)
                 
         
-        dfs("", digits)
+        dfs("", 0)
            
         return output 
         
