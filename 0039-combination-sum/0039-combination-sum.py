@@ -9,8 +9,8 @@ class Solution:
                 
             elif sum(comb) < target:
                 for idx in range(idx_last, len(candidates)):
-                    if candidates[idx] <= target:
-                        dfs(idx, comb+[candidates[idx]])
+                    # if candidates[idx] <= target:
+                    dfs(idx, comb+[candidates[idx]])
                         
         dfs(0, [])
         
