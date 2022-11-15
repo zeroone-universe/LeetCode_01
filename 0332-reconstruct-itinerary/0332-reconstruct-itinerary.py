@@ -13,6 +13,6 @@ class Solution:
             route.append(start)
             
         dfs("JFK")
-        
-        return route[::-1]
+        route.reverse()
+        return route
             
