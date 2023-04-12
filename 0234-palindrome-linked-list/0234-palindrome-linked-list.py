@@ -10,14 +10,18 @@ class Solution(object):
         :rtype: bool
         """
         
-        stack = []
+        rev = None
+        fast = head
+        slow = head
         
-        node = head
-        
-        stack.append(node.val)
-        
-        while node.next:
-            node = node.next
-            stack.append(node.val)
+        while fast and fast.next:
+            fast = fast.next.next
+            rev, rev.next, slow =slow, rev, slow.next
             
-        return stack == stack[::-1]
+        if fast:
+            slow = slow.next
+            
+        while rev and rev.val == slow.val:
+            slow, rev = slow.next, rev.next
+            
+        return not rev
