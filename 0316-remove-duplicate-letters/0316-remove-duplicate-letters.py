@@ -7,7 +7,7 @@ class Solution(object):
         
         counter = collections.Counter(s)
         stack = []
-        seen = set()
+        seen = []
         
         for char in s:
             counter[char] -= 1
@@ -18,6 +18,7 @@ class Solution(object):
                 seen.remove(stack.pop())
                 
             stack.append(char)
-            seen.add(char)
+            if char not in seen:
+                seen.append(char)
         
         return ''.join(stack)
