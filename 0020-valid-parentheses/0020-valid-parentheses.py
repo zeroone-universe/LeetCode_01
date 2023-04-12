@@ -1,19 +1,25 @@
-class Solution:
-    def isValid(self, s: str) -> bool:
-        table = {
-            ")":"(",
-            "}":"{",
-            "]":"["
+class Solution(object):
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        
+        dic = {
+            "(":")",
+            "[":"]",
+            "{":"}"
         }
-
+        
         stack = []
-        for idx in range(len(s)):
-            if s[idx] in table:
-                if not stack or table[s[idx]] != stack.pop():
-                    return False
+        
+        for bra in s:
+            if bra in dic:
+                stack.append(dic[bra])
             else:
-                stack.append(s[idx])
-
+                if not stack or stack.pop() != bra:
+                    return False
+                
         if stack:
             return False
         
