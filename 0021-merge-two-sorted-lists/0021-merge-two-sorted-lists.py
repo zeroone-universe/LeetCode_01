@@ -13,7 +13,7 @@ class Solution(object):
         
         
         
-        if not list1 or (list1 and list2 and list1.val > list2.val):
+        if not list1 or (list2 and list1.val > list2.val):
             list1, list2 = list2, list1
         
         
