@@ -10,11 +10,18 @@ class Solution(object):
         :rtype: ListNode
         """
         
-        root = head
+        root = prev = ListNode(0)
+        
+        prev.next = head
         
         while head and head.next:
-            head.val, head.next.val = head.next.val, head.val
+            b = head.next
+            head.next = b.next
+            b.next = head
             
-            head = head.next.next
+            prev.next = b
             
-        return root
+            head = head.next
+            prev = prev.next.next
+            
+        return root.next
