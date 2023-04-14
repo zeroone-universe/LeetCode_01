@@ -14,8 +14,8 @@ class Solution(object):
         
         root = head
         odd = head
-        even = even_save = head.next
-        # even_save = head.next
+        even = head.next
+        even_save = head.next
         
         while even and even.next:
             odd.next = odd.next.next
