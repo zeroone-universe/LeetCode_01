@@ -10,18 +10,10 @@ class Solution(object):
         :rtype: ListNode
         """
         
-        root = prev = ListNode(0)
-        
-        prev.next = head
-        
-        while head and head.next:
-            b = head.next
-            head.next = b.next
-            b.next = head
+        if head and head.next:
+            p = head.next
+            head.next = self.swapPairs(p.next)
             
-            prev.next = b
-            
-            head = head.next
-            prev = prev.next.next
-            
-        return root.next
+            p.next = head
+            return p
+        return head
