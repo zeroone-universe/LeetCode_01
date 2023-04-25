@@ -6,13 +6,4 @@ class Solution(object):
         :rtype: int
         """
         
-        output = 0
-        freq = collections.defaultdict(int)
-        
-        for stone in stones:
-            freq[stone] += 1
-            
-        for jewel in jewels:
-            output+=freq[jewel]
-            
-        return output
+        return sum(stone in jewels for stone in stones)
