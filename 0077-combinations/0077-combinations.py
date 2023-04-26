@@ -1,21 +1,27 @@
-class Solution:
-    def combine(self, n: int, k: int) -> List[List[int]]:
-        output = []
+class Solution(object):
+    def combine(self, n, k):
+        """
+        :type n: int
+        :type k: int
+        :rtype: List[List[int]]
+        """
         
-        def dfs(discovered):
-            if len(discovered) == k:
-                output.append(list(discovered))
-                return 0
+        combs = []
+        
+        def dfs(comb, start):
+            if len(comb) == k:
+                combs.append(comb)
+                return        
             
-            if not discovered:
-                start = 1
-            else:
-                start = discovered[-1]+1
-                
-            for num in range(start, n+1):
-                if num not in discovered:
-                    dfs(discovered+ [num])
+            if start > n:
+                return
+            
+            for idx in range(start, n+1, 1):
+                dfs(comb+[idx], idx+1)
         
-        dfs([])
-        return output
+        for v in range(1, n+1, 1):
+            dfs([v], v+1)
+            
+        return combs
+        
         
