@@ -10,7 +10,7 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-        max_dia = [0]
+        self.max_dia = 0
         
         def max_length(node):
             if node.left:
@@ -23,13 +23,13 @@ class Solution(object):
             else:
                 right_length = -1
                 
-            max_dia[0] = max(max_dia[0], left_length + right_length +2)
+            self.max_dia = max(self.max_dia, left_length + right_length +2)
             
             return max(1+left_length, 1+right_length)
         
         max_length(root)
         
-        return max_dia[0]
+        return self.max_dia
             
             
         
