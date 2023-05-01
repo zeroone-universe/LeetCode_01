@@ -25,4 +25,4 @@ class Solution(object):
                 
         dfs(root, 1)
         
-        return max(max_depth)
+        return max_depth[0]
