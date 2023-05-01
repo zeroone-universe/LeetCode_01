@@ -16,7 +16,7 @@ class Solution(object):
         max_depth = [0]
         
         def dfs(v, k):
-            max_depth.append(k)
+            max_depth[0] = max(max_depth[0], k)
             
             if v.left:
                 dfs(v.left, k+1)
