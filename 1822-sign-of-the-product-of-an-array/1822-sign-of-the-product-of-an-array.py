@@ -5,7 +5,6 @@ class Solution(object):
         :rtype: int
         """
         answer = 1
-        nums.sort()
         
         for i in nums:
             if i == 0:
